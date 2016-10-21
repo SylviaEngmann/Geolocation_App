@@ -4,6 +4,7 @@
 	function onDeviceReady() {
 		  
 		document.getElementById("geolocationbtn").addEventListener("click", function(){
+			alert('Hi!')
   			navigator.geolocation.getCurrentPosition(onSuccess,onError,
   												{ timeout: 30000,enableHighAccuracy: true 
   		});
@@ -33,7 +34,7 @@
 		var element = document.getElementById('geolocation');
 		element.innerHTML = 'Latitude: '+position.coords.latitude +'<br/'+'Longitude:' +position.coords.longitude +'<br/'+'<hr />' +element.innerHTML;
 	}
-	
+
 	function onWatchError(error){
 		alert('code:' + error.code +'\n'+
 				'message' +error.message + '\n');
