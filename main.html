@@ -12,10 +12,10 @@
          <script>
 			var userAgent = navigator.userAgent + '';
 			if (userAgent.indexOf('iPhone') > -1) {
-				document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+				document.write('<script src="scripts/cordova-iphone.js"></sc' + 'ript>');
 				var mobile_system = 'iphone';
 			} else if (userAgent.indexOf('Android') > -1) {
-				document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+				document.write('<script src="scripts/cordova-android.js"></sc' + 'ript>');
 				var mobile_system = 'android';
 			} else {
 				var mobile_system = '';
