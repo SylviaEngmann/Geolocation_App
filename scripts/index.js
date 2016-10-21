@@ -2,12 +2,15 @@
 	document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
 	function onDeviceReady() {
+		 alert('Hi');
+		 console.log("Please work"); 
 		  
 		document.getElementById("geolocationbtn").addEventListener("click", function(){
-			alert('Hi!')
+			alert('Hi!');
   			navigator.geolocation.getCurrentPosition(onSuccess,onError,
   												{ timeout: 30000,enableHighAccuracy: true 
   		});
+
   		});
 
   		var watchID = navigator.geolocation.watchPosition(onWatchSuccess,onWatchError,{
