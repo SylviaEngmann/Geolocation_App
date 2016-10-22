@@ -51,7 +51,7 @@
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280"/>
   </platform>
   
-  <plugin name="cordova-plugin-geolocation"  />
+  <plugin name="cordova-plugin-geolocation" />
   <plugin name="phonegap-plugin-barcodescanner"/>
   <plugin name="cordova-plugin-camera"  />
   <plugin name="cordova-plugin-media-capture" />

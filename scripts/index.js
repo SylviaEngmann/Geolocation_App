@@ -4,7 +4,7 @@
 	function onDeviceReady() {		  
 		document.getElementById("geolocationbtn").addEventListener("click" function(){
   			navigator.geolocation.getCurrentPosition(onSuccess,onError,
-  												{ timeout: 30000,enableHighAccuracy: true 
+  												{ enableHighAccuracy: true 
   		});
 
   		});
