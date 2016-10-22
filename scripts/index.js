@@ -1,12 +1,8 @@
 ﻿(function() {
 	document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
-	function onDeviceReady() {
-		 alert('Hi');
-		 console.log("Please work"); 
-		  
-		document.getElementById("geolocationbtn").addEventListener("click", function(){
-			alert('Hi!');
+	function onDeviceReady() {		  
+		document.getElementById("geolocationbtn").addEventListener("click" function(){
   			navigator.geolocation.getCurrentPosition(onSuccess,onError,
   												{ timeout: 30000,enableHighAccuracy: true 
   		});
