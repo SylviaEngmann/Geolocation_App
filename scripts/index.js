@@ -17,7 +17,7 @@
 			navigator.geolocation.clearWatch(watchID);
 		});
 
-  		}
+  		};
 
 		
   	var onSuccess = function(position){
