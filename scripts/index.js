@@ -2,7 +2,7 @@
 	document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
 	function onDeviceReady() {		  
-		document.getElementById("geolocationbtn").addEventListener("click" function(){
+		document.getElementById("geolocationbtn").addEventListener("click", function(){
   			navigator.geolocation.getCurrentPosition(onSuccess,onError,
   												{ enableHighAccuracy: true 
   		});
@@ -10,7 +10,7 @@
   		});
 
   		var watchID = navigator.geolocation.watchPosition(onWatchSuccess,onWatchError,{
-  		    timeout: 30000,enableHighAccuracy: true 
+  		    timeout: 30000 
   		});	
 
 		document.getElementById("clearWatchBtn").addEventListener("click", function() {
