@@ -19,6 +19,12 @@
 			navigator.geolocation.clearWatch(watchID);
 		});
 
+		document.getElementById("barcode").addEventListener("click", function(){
+ 	 		cordova.plugins.barcodeScanner.scan(scanSuccess, scanError,
+ 				{prompt:"Place a barcode inside the scan area" 
+          		formats:QR_CODE,PDF_417, 
+         		orientation:landscape 
+		 });
 	};
 
 	var onSuccess = function(position) {
@@ -37,5 +43,14 @@
 	function onWatchError(error) {
 		alert('code:' + error.code + '\n' + 'message' + error.message + '\n');
 	};
-
+	function scanSuccess(result) {
+        alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+     };
+    function scanError (error) {
+        alert("Scanning failed: " + error);
+          
+     };
 })();
