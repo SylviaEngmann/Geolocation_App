@@ -18,24 +18,21 @@
 		document.getElementById("clearWatchBtn").addEventListener("click", function() {
 			navigator.geolocation.clearWatch(watchID);
 		});
-
-		document.getElementById("barcode").addEventListener("click", function(){
-      cordova.plugins.barcodeScanner.scan(scanSuccess, scanError,
-        {prompt:"Place a barcode inside the scan area" 
-              formats:QR_CODE,PDF_417, 
-            orientation:landscape 
-       		});
-    	});
-
 	};
 
 	var onSuccess = function(position) {
 		alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n');
+		var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+		var mapOptions = {zoom: 4,center: myLatlng}
+		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		var marker = new google.maps.Marker({position: myLatlng,map: map});
 	};
 
 	function onError(error) {
 		alert('code:' + error.code + '\n' + 'message' + error.message + '\n');
 	};
+	
+	google.maps.event.addDomListener(window, 'load', onSuccess);
 
 	function onWatchSuccess(position) {
 		var element = document.getElementById('geolocation');
@@ -45,14 +42,4 @@
 	function onWatchError(error) {
 		alert('code:' + error.code + '\n' + 'message' + error.message + '\n');
 	};
-	function scanSuccess(result) {
-        alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-      };
-    function scanError (error) {
-        alert("Scanning failed: " + error);   
-      };
-
 })();

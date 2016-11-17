@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp7223c1" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
   <name>GeoLoc and Barcode Scanner </name>
-  <description>Uses GPS to determine the user's location, and allows the user to scan a barcode as well</description>
+  <description>Uses GPS to determine the user's location</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
   <content src="index.html" />
   <access origin="*" />
@@ -119,7 +119,6 @@
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280"/>
   </platform>
   <plugin name="cordova-plugin-camera"  />
-  <plugin name="phonegap-plugin-barcodescanner"/>
   <plugin name="cordova-plugin-media-capture" />
   <plugin name="cordova-plugin-compat" />
   <plugin name="cordova-plugin-file"  />
