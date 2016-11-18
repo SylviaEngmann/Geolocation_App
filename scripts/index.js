@@ -21,8 +21,11 @@
 	};
 
 	var onSuccess = function(position) {
-		alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n');
-		var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+		var lat= position.coords.latitude;
+		var lang= position.coords.latitude;
+
+		//alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n');
+		var myLatlng = new google.maps.LatLng(lat,lang);
 		var mapOptions = {zoom: 4,center: myLatlng}
 		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 		var marker = new google.maps.Marker({position: myLatlng,map: map});
@@ -31,7 +34,7 @@
 	function onError(error) {
 		alert('code:' + error.code + '\n' + 'message' + error.message + '\n');
 	};
-	
+
 	google.maps.event.addDomListener(window, 'load', onSuccess);
 
 	function onWatchSuccess(position) {
